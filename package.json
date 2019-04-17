@@ -1,0 +1,38 @@
+{
+  "name": "react-starter-kit",
+  "version": "1.0.0",
+  "description": "starter kit for building web apps with react",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest",
+    "commit": "git cz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/luisbar/react-starter-kit.git"
+  },
+  "author": {
+    "name": "Luis Angel Barrancos Ortiz (luisbar)",
+    "email": "luisbar180492@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Julian Gil Santos",
+      "email": "gilsantosjulian@gmail.com"
+    }
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/luisbar/react-starter-kit/issues"
+  },
+  "homepage": "https://gitlab.com/luisbar/react-starter-kit#README",
+  "devDependencies": {
+    "commitizen": "^3.0.7",
+    "cz-conventional-changelog": "^2.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
