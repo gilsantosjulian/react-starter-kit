@@ -7,7 +7,7 @@ interface HelloProps {
 
 export default class HelloWorld extends React.Component<HelloProps, {}> {
   render() {
-    const { compiler, framework } = this.props;
+    const { compiler, framework, } = this.props;
 
     return (
       <h1>
