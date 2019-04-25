@@ -5,13 +5,7 @@ module.exports = {
     node: true,
   },
   extends: ['airbnb'],
-  plugins: [
-    'babel',
-    'import',
-    'jsx-a11y',
-    'react',
-    'prettier',
-  ],
+  plugins: [],
   parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 6,
@@ -40,16 +34,19 @@ module.exports = {
     'max-len': ['error', 90, 2, {
       ignoreUrls: true,
     }], // max lenght is of 90
-    "padded-blocks": 'off', // turn off padding between block and first line of code, ej between block class and first line after
+    'padded-blocks': 'off', // turn off padding between block and first line of code, ej between block class and first line after
+    'class-methods-use-this': 'off', // is useful when we call methods on class components
+    'comma-dangle': ['error', 'always'], // use always trailing comas
+    'no-trailing-spaces': 'off', // allow trailing spaces
 
     /* The next rules is for accesibility */
-    "jsx-a11y/anchor-is-valid": ["error", {
-      "components": ["Link"],
-      "specialLink": ["to"]
+    'jsx-a11y/anchor-is-valid': ['error', {
+      'components': ['Link'],
+      'specialLink': ['to']
     }],
-    "jsx-a11y/label-has-for": [2, {
-      "required": {
-        "every": ["id"]
+    'jsx-a11y/label-has-for': [2, {
+      'required': {
+        'every': ['id']
       }
     }], // for nested label htmlFor error
 
