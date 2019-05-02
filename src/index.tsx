@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, View } from 'react-navi'
 
-import routes from './config/routes';
+import routes from 'config/routes';
 
 const rootElement = document.getElementById('root');
 
