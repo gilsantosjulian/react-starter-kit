@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Router, View, } from 'react-navi';
 
-import HelloWorld from './views/HelloWorld';
+import routes from './config/routes';
 
 const rootElement = document.getElementById('root');
 
 ReactDOM.render(
-  <HelloWorld compiler="TypeScript" framework="React" />,
+  <Router routes={routes}>
+    <View />
+  </Router>,
   rootElement,
 );
