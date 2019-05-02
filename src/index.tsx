@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, View } from 'react-navi'
+import { Router, View, } from 'react-navi';
 
 import routes from './config/routes';
 

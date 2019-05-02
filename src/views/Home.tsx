@@ -8,8 +8,8 @@ interface HomeProps {
 
 export default class Home extends React.Component<HomeProps, {}> {
   render() {
-    const { compiler, framework, bundler } = this.props;
+    const { compiler, framework, bundler, } = this.props;
 
-    return <h1>Hello from {compiler} and {framework} and {bundler ? bundler : ':)'}!</h1>;
+    return <h1>Hello from {compiler} and {framework} and {bundler || ':)'}!</h1>;
   }
 }
