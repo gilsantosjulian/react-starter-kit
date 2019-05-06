@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount, route } from 'navi'
+import { mount, route, } from 'navi';
 
 import Home from 'views/Home';
 import Another from 'views/Another';
@@ -12,5 +12,5 @@ export default mount({
   '/another': route({
     title: 'Another',
     view: <Another />,
-  })
+  }),
 });
