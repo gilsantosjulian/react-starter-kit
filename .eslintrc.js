@@ -20,7 +20,7 @@ module.exports = {
     }], // allow .tsx extension
     'react/jsx-one-expression-per-line': 'off', // disable put jsx expressions in a new line, 
     'react/prefer-stateless-function': 1, // Only use function components 'Warning'
-    'no-console': 1, // Don't use console.log() 'Warning'
+    'no-console': 'off', // Don't use console.log() 'Warning'
     'no-alert': 1, // Don't use alert()'Warning'
     'space-before-function-paren': 0, // space between functions
     'max-len': ['error', 90, 2, {
