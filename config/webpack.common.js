@@ -8,7 +8,7 @@ module.exports = {
     path: path.join(__dirname, '../dist'),
     publicPath: '/',
   },
-  resolve : {
+  resolve: {
     extensions: [
       '.js',
       '.ts',
@@ -59,6 +59,7 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: './public/index.html',
       filename: './index.html',
+      favicon: './public/favicon.png',
     }),
   ],
 };
