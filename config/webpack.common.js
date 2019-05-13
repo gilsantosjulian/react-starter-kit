@@ -8,7 +8,7 @@ module.exports = {
     path: path.join(__dirname, '../dist'),
     publicPath: '/',
   },
-  resolve : {
+  resolve: {
     extensions: [
       '.js',
       '.ts',
@@ -18,6 +18,7 @@ module.exports = {
     alias: {
       config: path.resolve(__dirname, '../src/config/'),
       views: path.resolve(__dirname, '../src/views/'),
+      utils: path.resolve(__dirname, '../src/utils/'),
     },
   },
   module: {

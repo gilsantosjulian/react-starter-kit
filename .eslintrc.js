@@ -30,5 +30,7 @@ module.exports = {
     'class-methods-use-this': 'off', // is useful when we call methods on class components
     'comma-dangle': ['error', 'always'], // use always trailing comas
     'no-trailing-spaces': 'off', // allow trailing spaces
+    'no-plusplus': 'off',
+    'no-await-in-loop': 'off',
   },
 };
