@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "resolveJsonModule": true,
     "jsx": "react",
     "esModuleInterop": true,
     "lib": ["dom", "es2015", "es2016", "es2017"],
@@ -8,6 +9,7 @@
     "paths": {
       "config/*": ["src/config/*"],
       "views/*": ["src/views/*"],
+      "utils/*": ["src/utils/*"],
     },
   },
   "include": [
