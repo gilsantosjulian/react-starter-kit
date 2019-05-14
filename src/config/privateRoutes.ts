@@ -8,26 +8,36 @@ import isAuthenticate from 'utils/isAuthenticate';
 export default async () => {
   const routes = {};
 
-  await asyncForEach(privateViews, async (privateView) => {
-    const specifiConfiguration = await import(
-      `views/private/config/${upperCamelCaseToLowerCamelCase(privateView.name)}`
-    );
-    const url = specifiConfiguration.default.url || privateView.path;
+  await asyncForEach(
+    privateViews, async (privateView) => {
+      const specifiConfiguration = await import(
+        `views/private/config/${upperCamelCaseToLowerCamelCase(
+          privateView.name
+        )}`
+      );
+      const url = specifiConfiguration.default.url || privateView.path;
 
-    routes[url] = map(() => {
-      if (isAuthenticate()) {
-        return route({
-          ...specifiConfiguration.default,
-          title: privateView.name,
-          getView: () => import(
-            `views/private/${privateView.name}.${privateView.extension}`
-          ),
-        });
-      }
+      routes[url] = map(
+        () => {
+          if (isAuthenticate()) {
+            return route(
+              {
+                ...specifiConfiguration.default,
+                title: privateView.name,
+                getView: () => import(
+                  `views/private/${privateView.name}.${privateView.extension}`
+                ),
+              }
+            );
+          }
 
-      return redirect('/');
-    });
-  });
+          return redirect(
+            '/'
+          );
+        }
+      );
+    }
+  );
 
   return { ...routes, };
 };
