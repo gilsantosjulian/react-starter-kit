@@ -1,14 +1,24 @@
-import React from 'react';
+import React, { Suspense, } from 'react';
 import ReactDOM from 'react-dom';
 import { Router, View, } from 'react-navi';
 
-import routes from 'config/routes';
+import getRoutes from 'config/routes';
 
-const rootElement = document.getElementById('root');
+const rootElement = document.getElementById(
+  'root'
+);
 
-ReactDOM.render(
-  <Router routes={routes}>
-    <View />
-  </Router>,
-  rootElement,
+getRoutes().then(
+  (
+    routes
+  ): void => {
+    ReactDOM.render(
+      <Suspense fallback={null}>
+        <Router routes={routes}>
+          <View />
+        </Router>
+      </Suspense>,
+      rootElement,
+    );
+  },
 );

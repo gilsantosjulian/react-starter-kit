@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Another",
+    "path": "/another",
+    "extension": "tsx"
+  },
+  {
+    "name": "Home",
+    "path": "/",
+    "extension": "tsx"
+  }
+]

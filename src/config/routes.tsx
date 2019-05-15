@@ -1,16 +1,18 @@
-import React from 'react';
-import { mount, route } from 'navi'
+import { mount, Matcher, } from 'navi';
 
-import Home from 'views/Home';
-import Another from 'views/Another';
+import getPublicViews from 'config/publicRoutes';
+import getPrivateViews from 'config/privateRoutes';
 
-export default mount({
-  '/': route({
-    title: 'Home',
-    view: <Home />,
-  }),
-  '/another': route({
-    title: 'Another',
-    view: <Another />,
-  })
-});
+const getViews = async (): Promise<object> => {
+  const publicViews = await getPublicViews();
+  const privateViews = await getPrivateViews();
+
+  return {
+    ...privateViews,
+    ...publicViews,
+  };
+};
+
+export default async (): Promise<Matcher<{}, {}>> => mount(
+  await getViews()
+);
