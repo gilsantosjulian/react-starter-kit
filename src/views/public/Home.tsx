@@ -1,12 +1,7 @@
-import React from 'react';
-import { useCurrentRoute, } from 'react-navi';
+import React, { ReactElement, } from 'react';
 
-export default () => {
-  const route = useCurrentRoute();
+import { textGreen, } from 'publicViewsStyle/home.css';
 
-  console.log(
-    route
-  );
+const Home: React.SFC = (): ReactElement => <div className={textGreen}>Home</div>;
 
-  return <div>Home</div>;
-};
+export default Home;

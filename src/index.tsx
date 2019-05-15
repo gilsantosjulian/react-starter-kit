@@ -11,7 +11,7 @@ const rootElement = document.getElementById(
 getRoutes().then(
   (
     routes
-  ) => {
+  ): void => {
     ReactDOM.render(
       <Suspense fallback={null}>
         <Router routes={routes}>
@@ -20,5 +20,5 @@ getRoutes().then(
       </Suspense>,
       rootElement,
     );
-  }
+  },
 );

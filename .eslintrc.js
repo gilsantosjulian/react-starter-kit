@@ -3,9 +3,9 @@ module.exports = {
     es6: true,
     browser: true,
   },
-  extends: ['airbnb'],
+  extends: ['airbnb', 'plugin:@typescript-eslint/recommended'],
   plugins: [],
-  parser: 'babel-eslint',
+  parser:  '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 6,
     sourceType: 'module',
@@ -30,10 +30,11 @@ module.exports = {
     'class-methods-use-this': 'off', // is useful when we call methods on class components
     'comma-dangle': ['error', 'always'], // use always trailing comas
     'no-trailing-spaces': 'off', // allow trailing spaces
-    'no-plusplus': 'off',
-    'no-await-in-loop': 'off',
     'no-plusplus': 'off', // enable plusplus e.g. let a = 1; a++;
     'no-await-in-loop': 'off', // enable await for using it inside a loop
     'function-paren-newline': ['error', { minItems: 1 }], // add new line in functions that has one argument or more
+    'import/prefer-default-export': 'off', // export default not mandatory
+    '@typescript-eslint/explicit-function-return-type': 'error', // you have to specify the return type
+    '@typescript-eslint/indent': ['error', 2], // indentation
   },
 };

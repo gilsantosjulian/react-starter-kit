@@ -1,6 +1,6 @@
 export default (
   name
-) => {
+): string => {
   const cookies = document.cookie;
   const cookiesSplitted: string[] = cookies.split(
     ';'
@@ -8,7 +8,9 @@ export default (
 
   const cookieMatched = cookiesSplitted
     .filter(
-      cookie => cookie.split(
+      (
+        cookie
+      ): boolean => cookie.split(
         '='
       ).shift() === name
     )
