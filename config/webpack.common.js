@@ -19,6 +19,9 @@ module.exports = {
       config: path.resolve(__dirname, '../src/config/'),
       views: path.resolve(__dirname, '../src/views/'),
       utils: path.resolve(__dirname, '../src/utils/'),
+      assets: path.resolve(__dirname, '../src/assets/'),
+      publicViewsStyle: path.resolve(__dirname, '../src/assets/styles/views/public/'),
+      privateViewsStyle: path.resolve(__dirname, '../src/assets/styles/views/private/'),
     },
   },
   module: {
@@ -49,6 +52,23 @@ module.exports = {
             options: {
               minimize: true,
             },
+          },
+        ],
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'typings-for-css-modules-loader',
+            options: {
+              modules: true,
+              namedExport: true,
+              camelCase: true,
+            }
           },
         ],
         exclude: /node_modules/,

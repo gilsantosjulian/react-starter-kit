@@ -1,31 +1,34 @@
-import { route, redirect, map, } from 'navi';
+import {
+  route, redirect, map, Matcher, 
+} from 'navi';
 
 import privateViews from 'config/privateViews.json';
 import asyncForEach from 'utils/asyncForEach';
 import upperCamelCaseToLowerCamelCase from 'utils/upperCamelCaseToLowerCamelCase';
-import isAuthenticate from 'utils/isAuthenticate';
+import isAuthenticated from 'utils/isAuthenticated';
 
-export default async () => {
+export default async (): Promise<object> => {
   const routes = {};
 
   await asyncForEach(
-    privateViews, async (privateView) => {
+    privateViews,
+    async ({ name, extension, path, }): Promise<void> => {
       const specifiConfiguration = await import(
         `views/private/config/${upperCamelCaseToLowerCamelCase(
-          privateView.name
+          name
         )}`
       );
-      const url = specifiConfiguration.default.url || privateView.path;
+      const url = specifiConfiguration.default.url || path;
 
       routes[url] = map(
-        () => {
-          if (isAuthenticate()) {
+        (): Matcher<{}, {}> => {
+          if (isAuthenticated()) {
             return route(
               {
                 ...specifiConfiguration.default,
-                title: privateView.name,
-                getView: () => import(
-                  `views/private/${privateView.name}.${privateView.extension}`
+                title: name,
+                getView: (): Promise<object> => import(
+                  `views/private/${name}.${extension}`
                 ),
               }
             );
@@ -34,9 +37,9 @@ export default async () => {
           return redirect(
             '/'
           );
-        }
+        },
       );
-    }
+    },
   );
 
   return { ...routes, };

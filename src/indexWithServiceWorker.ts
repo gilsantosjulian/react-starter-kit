@@ -4,7 +4,8 @@ import(
 
 if ('serviceWorker' in navigator) {
   window.addEventListener(
-    'load', () => {
+    'load',
+    (): void => {
       navigator.serviceWorker
         .register(
           '/webpack-service-worker.js'
@@ -12,21 +13,21 @@ if ('serviceWorker' in navigator) {
         .then(
           (
             registration
-          ) => {
+          ): void => {
             console.log(
               'Service workers registered: ', registration
             );
-          }
+          },
         )
         .catch(
           (
             registrationError
-          ) => {
+          ): void => {
             console.log(
               'Service workers registration failed: ', registrationError
             );
-          }
+          },
         );
-    }
+    },
   );
 }

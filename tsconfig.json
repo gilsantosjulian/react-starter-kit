@@ -10,6 +10,9 @@
       "config/*": ["src/config/*"],
       "views/*": ["src/views/*"],
       "utils/*": ["src/utils/*"],
+      "assets/*": ["src/assets/*"],
+      "publicViewsStyle/*": ["src/assets/styles/views/public/*"],
+      "privateViewsStyle/*": ["src/assets/styles/views/private/*"],
     },
   },
   "include": [

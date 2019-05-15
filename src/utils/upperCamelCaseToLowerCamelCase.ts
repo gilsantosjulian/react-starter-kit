@@ -1,7 +1,8 @@
 export default (
   word: string
-) => word.replace(
-  /([A-Z])/g, (
+): string => word.replace(
+  /([A-Z])/g,
+  (
     match, another, index
-  ) => (index === 0 ? match.toLowerCase() : match),
+  ): string => (index === 0 ? match.toLowerCase() : match),
 );

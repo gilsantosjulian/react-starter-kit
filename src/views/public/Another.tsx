@@ -1,3 +1,5 @@
-import React from 'react';
+import React, { ReactElement, } from 'react';
 
-export default () => <div>Another</div>;
+const Another: React.SFC = (): ReactElement => <div>Another</div>;
+
+export default Another;

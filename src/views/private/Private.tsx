@@ -1,3 +1,7 @@
-import React from 'react';
+import React, { ReactElement, } from 'react';
 
-export default () => <div>Private</div>;
+import { textDanger, } from 'privateViewsStyle/private.css';
+
+const Private: React.SFC = (): ReactElement => <div className={textDanger}>Private</div>;
+
+export default Private;
