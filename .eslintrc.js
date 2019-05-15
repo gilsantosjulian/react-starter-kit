@@ -32,5 +32,8 @@ module.exports = {
     'no-trailing-spaces': 'off', // allow trailing spaces
     'no-plusplus': 'off',
     'no-await-in-loop': 'off',
+    'no-plusplus': 'off', // enable plusplus e.g. let a = 1; a++;
+    'no-await-in-loop': 'off', // enable await for using it inside a loop
+    'function-paren-newline': ['error', { minItems: 1 }], // add new line in functions that has one argument or more
   },
 };

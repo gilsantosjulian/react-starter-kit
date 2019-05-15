@@ -13,4 +13,6 @@ const getViews = async () => {
   };
 };
 
-export default async () => mount(await getViews());
+export default async () => mount(
+  await getViews()
+);
