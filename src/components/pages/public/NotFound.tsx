@@ -5,10 +5,7 @@ import Error from 'organisms/error/Error';
 
 const NotFound: React.SFC = (): ReactElement => (
   <ErrorTemplate>
-    <Error
-      title="Not found 404"
-      description="The resource did not found, maybe you wrote a bad url"
-    />
+    <Error title="notfound.txt1" description="notfound.txt2" />
   </ErrorTemplate>
 );
 

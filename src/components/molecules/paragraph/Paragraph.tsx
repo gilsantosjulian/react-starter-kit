@@ -8,8 +8,8 @@ const Paragraph: React.SFC<HeroProps> = (
   { title, description, }
 ): ReactElement => (
   <div className={styles.container}>
-    <Title text={title} />
-    <Description text={description} />
+    <Title textId={title} />
+    <Description textId={description} />
   </div>
 );
 

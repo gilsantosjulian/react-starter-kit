@@ -1,15 +1,18 @@
 import React, { ReactElement, } from 'react';
+import { FormattedMessage, } from 'react-intl';
 
 import * as styles from 'atomsStyles/title/title.scss';
 
 const Title: React.SFC<TitleProps> = (
-  { text, }
+  { textId, }
 ): ReactElement => (
-  <h3 className={styles.text}>{text}</h3>
+  <h3 className={styles.text}>
+    <FormattedMessage id={textId} />
+  </h3>
 );
 
 interface TitleProps {
-  text: string;
+  textId: string;
 }
 
 export default Title;

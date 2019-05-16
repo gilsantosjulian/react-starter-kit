@@ -16,6 +16,7 @@
       "utils/*": ["src/utils/*"],
       "assets/*": ["src/assets/*"],
       "images/*": ["src/assets/images/*"],
+      "strings/*": ["src/assets/strings/*"],
       "publicViewsStyles/*": ["src/assets/styles/pages/public/*"],
       "privateViewsStyles/*": ["src/assets/styles/pages/private/*"],
       "templatesStyles/*": ["src/assets/styles/templates/*"],

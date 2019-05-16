@@ -1,15 +1,18 @@
 import React, { ReactElement, } from 'react';
+import { FormattedMessage, } from 'react-intl';
 
 import * as styles from 'atomsStyles/description/description.scss';
 
 const Description: React.SFC<DescriptionProps> = (
-  { text, }
+  { textId, }
 ): ReactElement => (
-  <h5 className={styles.text}>{text}</h5>
+  <h5 className={styles.text}>
+    <FormattedMessage id={textId} />
+  </h5>
 );
 
 interface DescriptionProps {
-  text: string;
+  textId: string;
 }
 
 export default Description;

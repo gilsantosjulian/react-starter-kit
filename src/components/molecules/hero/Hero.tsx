@@ -9,7 +9,7 @@ const Hero: React.SFC<HeroProps> = (
 ): ReactElement => (
   <div className={styles.container}>
     <SmallImage image={image} />
-    <Description text={text} />
+    <Description textId={text} />
   </div>
 );
 

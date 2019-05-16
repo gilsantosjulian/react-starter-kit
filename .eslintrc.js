@@ -37,5 +37,6 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'error', // you have to specify the return type
     '@typescript-eslint/indent': ['error', 2], // indentation
     'react/prop-types': 'off', // disable verification of prop types because we are using typescript interfaces instead of prop types
+    'array-bracket-spacing': ['error', 'always'], // to put sapaces at the begining and the end of array
   },
 };
