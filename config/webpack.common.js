@@ -57,7 +57,7 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.css$/,
+        test: /\.css|.scss$/,
         use: [
           {
             loader: 'style-loader',
@@ -68,7 +68,10 @@ module.exports = {
               modules: true,
               namedExport: true,
               camelCase: true,
-            }
+            },
+          },
+          {
+            loader: 'sass-loader',
           },
         ],
         exclude: /node_modules/,
