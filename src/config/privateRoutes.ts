@@ -14,7 +14,7 @@ export default async (): Promise<object> => {
     privateViews,
     async ({ name, extension, path, }): Promise<void> => {
       const specifiConfiguration = await import(
-        `views/private/config/${upperCamelCaseToLowerCamelCase(
+        `pages/private/config/${upperCamelCaseToLowerCamelCase(
           name
         )}`
       );
@@ -28,7 +28,7 @@ export default async (): Promise<object> => {
                 ...specifiConfiguration.default,
                 title: name,
                 getView: (): Promise<object> => import(
-                  `views/private/${name}.${extension}`
+                  `pages/private/${name}.${extension}`
                 ),
               }
             );

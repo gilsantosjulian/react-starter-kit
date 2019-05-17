@@ -36,5 +36,6 @@ module.exports = {
     'import/prefer-default-export': 'off', // export default not mandatory
     '@typescript-eslint/explicit-function-return-type': 'error', // you have to specify the return type
     '@typescript-eslint/indent': ['error', 2], // indentation
+    'react/prop-types': 'off', // disable verification of prop types because we are using typescript interfaces instead of prop types
   },
 };

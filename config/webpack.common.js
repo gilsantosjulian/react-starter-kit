@@ -14,14 +14,29 @@ module.exports = {
       '.ts',
       '.tsx',
       '.json',
+      '.scss',
+      '.css',
+      '.png',
+      '.svg',
+      '.jpeg',
+      '.jpg',
     ],
     alias: {
       config: path.resolve(__dirname, '../src/config/'),
-      views: path.resolve(__dirname, '../src/views/'),
+      pages: path.resolve(__dirname, '../src/components/pages/'),
+      templates: path.resolve(__dirname, '../src/components/templates/'),
+      organisms: path.resolve(__dirname, '../src/components/organisms/'),
+      molecules: path.resolve(__dirname, '../src/components/molecules/'),
+      atoms: path.resolve(__dirname, '../src/components/atoms/'),
       utils: path.resolve(__dirname, '../src/utils/'),
       assets: path.resolve(__dirname, '../src/assets/'),
-      publicViewsStyle: path.resolve(__dirname, '../src/assets/styles/views/public/'),
-      privateViewsStyle: path.resolve(__dirname, '../src/assets/styles/views/private/'),
+      images: path.resolve(__dirname, '../src/assets/images/'),
+      publicViewsStyles: path.resolve(__dirname, '../src/assets/styles/pages/public/'),
+      privateViewsStyles: path.resolve(__dirname, '../src/assets/styles/pages/private/'),
+      templatesStyles: path.resolve(__dirname, '../src/assets/styles/templates/'),
+      organismsStyles: path.resolve(__dirname, '../src/assets/styles/organisms/'),
+      moleculesStyles: path.resolve(__dirname, '../src/assets/styles/molecules/'),
+      atomsStyles: path.resolve(__dirname, '../src/assets/styles/atoms/'),
     },
   },
   module: {
@@ -75,6 +90,28 @@ module.exports = {
           },
         ],
         exclude: /node_modules/,
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: 'images',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(eot|ttf|woff|woff2)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: 'fonts',
+            },
+          },
+        ],
       },
     ],
   },
