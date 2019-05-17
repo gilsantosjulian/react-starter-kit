@@ -31,6 +31,7 @@ module.exports = {
       utils: path.resolve(__dirname, '../src/utils/'),
       assets: path.resolve(__dirname, '../src/assets/'),
       images: path.resolve(__dirname, '../src/assets/images/'),
+      strings: path.resolve(__dirname, '../src/assets/strings/'),
       publicViewsStyles: path.resolve(__dirname, '../src/assets/styles/pages/public/'),
       privateViewsStyles: path.resolve(__dirname, '../src/assets/styles/pages/private/'),
       templatesStyles: path.resolve(__dirname, '../src/assets/styles/templates/'),

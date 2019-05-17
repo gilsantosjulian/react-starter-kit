@@ -10,10 +10,7 @@ const Error: React.SFC<ErrorProps> = (
   { title, description, }
 ): ReactElement => (
   <div className={styles.container}>
-    <Hero
-      image={image}
-      text="Starter kit which contains React, Navi, Typescript, Webpack, Eslint, etc"
-    />
+    <Hero image={image} text="error.txt1" />
     <Paragraph title={title} description={description} />
   </div>
 );
