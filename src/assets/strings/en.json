@@ -1,5 +1,6 @@
 {
   "error.txt1": "Starter kit which contains React, Navi, Typescript, Webpack, Eslint, Prettier, Commitizen, React intl, etc",
   "notfound.txt1": "Not found 404",
-  "notfound.txt2": "The resource did not found, maybe you wrote an incorrect url"
+  "notfound.txt2": "The resource did not found, maybe you wrote an incorrect url",
+  "splash.txt1": "Loading..."
 }

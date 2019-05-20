@@ -4,7 +4,9 @@ import Hero from 'molecules/hero/Hero';
 import Paragraph from 'molecules/paragraph/Paragraph';
 import * as styles from 'organismsStyles/error/error.scss';
 
-import image from 'images/logo.png';
+const image = require(
+  'images/logo.png'
+);
 
 const Error: React.SFC<ErrorProps> = (
   { title, description, }

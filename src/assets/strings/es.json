@@ -1,5 +1,6 @@
 {
   "error.txt1": "Kit de inicio que contiene React, Navi, Typescript, Webpack, Eslint, Prettier, Commitizen, React intl etc",
   "notfound.txt1": "No encontrado 404",
-  "notfound.txt2": "El recurso no se encontro, quizas escribiste una url incorrecta"
+  "notfound.txt2": "El recurso no se encontro, quizas escribiste una url incorrecta",
+  "splash.txt1": "Cargando..."
 }
