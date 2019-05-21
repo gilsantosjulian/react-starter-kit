@@ -25,11 +25,40 @@ export default (
     .then(
       (
         data
+      ): Promise<any> => Promise.all(
+        data.results.map(
+          (
+            item
+          ): Promise<Response> => fetch(
+            item.url
+          )
+        )
+      ),
+    )
+    .then(
+      (
+        responses
+      ): Promise<any> => Promise.all(
+        responses.map(
+          (
+            response
+          ): Promise<any> => response.json()
+        )
+      ),
+    )
+    .then(
+      (
+        data
       ): void => dispatch(
         actionHelper(
-          FETCHING_POKEMONS, data.results
-        )
-      )
+          FETCHING_POKEMONS,
+          data.map(
+            (
+              item
+            ): object => ({ name: item.name, image: item.sprites.front_shiny, }),
+          ),
+        ),
+      ),
     )
     .catch(
       (

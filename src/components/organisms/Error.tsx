@@ -1,8 +1,8 @@
 import React, { ReactElement, } from 'react';
 
-import Hero from 'molecules/hero/Hero';
-import Paragraph from 'molecules/paragraph/Paragraph';
-import * as styles from 'organismsStyles/error/error.scss';
+import Hero from 'molecules/Hero';
+import Paragraph from 'molecules/Paragraph';
+import * as styles from 'assets/styles/organisms/error.scss';
 
 const image = require(
   'images/logo.png'
@@ -12,7 +12,7 @@ const Error: React.SFC<ErrorProps> = (
   { title, description, }
 ): ReactElement => (
   <div className={styles.container}>
-    <Hero image={image} text="error.txt1" />
+    <Hero image={image} textId="error.txt1" />
     <Paragraph title={title} description={description} />
   </div>
 );

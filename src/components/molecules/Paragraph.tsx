@@ -1,10 +1,10 @@
 import React, { ReactElement, } from 'react';
 
-import Title from 'atoms/title/Title';
-import Description from 'atoms/description/Description';
-import * as styles from 'moleculesStyles/paragraph/paragraph.scss';
+import Title from 'atoms/Title';
+import Description from 'atoms/Description';
+import * as styles from 'assets/styles/molecules/paragraph.scss';
 
-const Paragraph: React.SFC<HeroProps> = (
+const Paragraph: React.SFC<ParagraphProps> = (
   { title, description, }
 ): ReactElement => (
   <div className={styles.container}>
@@ -13,7 +13,7 @@ const Paragraph: React.SFC<HeroProps> = (
   </div>
 );
 
-interface HeroProps {
+interface ParagraphProps {
   title: string;
   description: string;
 }

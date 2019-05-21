@@ -5,7 +5,7 @@ import { IntlProvider, } from 'react-intl';
 
 import getRoutes from 'config/routes';
 import { StoreProvider, } from 'state/StoreProvider';
-import reducers from 'state/reducer';
+import reducer from 'state/reducer';
 import initialState from 'state/initialState';
 import NotFound from 'pages/public/NotFound';
 import Splash from 'pages/public/Splash';
@@ -21,7 +21,7 @@ getRoutes().then(
     routes
   ): void => {
     ReactDOM.render(
-      <StoreProvider reducer={reducers} initialState={initialState}>
+      <StoreProvider reducer={reducer} initialState={initialState}>
         <IntlProvider locale={getLanguage()} messages={getMessage()}>
           <Suspense fallback={<Splash />}>
             <Router routes={routes}>

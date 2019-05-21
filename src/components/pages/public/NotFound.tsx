@@ -1,12 +1,12 @@
 import React, { ReactElement, } from 'react';
 
-import CenteredTemplate from 'templates/centeredTemplate/CenteredTemplate';
-import Error from 'organisms/error/Error';
+import Centered from 'templates/Centered';
+import Error from 'organisms/Error';
 
 const NotFound: React.SFC = (): ReactElement => (
-  <CenteredTemplate>
+  <Centered>
     <Error title="notfound.txt1" description="notfound.txt2" />
-  </CenteredTemplate>
+  </Centered>
 );
 
 export default NotFound;
