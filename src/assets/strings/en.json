@@ -1,5 +1,10 @@
 {
   "error.txt1": "Starter kit which contains React, Navi, Typescript, Webpack, Eslint, Prettier, Commitizen, React intl, etc",
   "notfound.txt1": "Not found 404",
-  "notfound.txt2": "The resource did not found, maybe you wrote an incorrect url"
+  "notfound.txt2": "The resource did not found, maybe you wrote an incorrect url",
+  "splash.txt1": "Loading...",
+  "home.txt1": "Reason about this starter",
+  "home.txt2": "we want to reduce headaches of configuring a React project from scratch and we included new technologies.",
+  "home.txt3": "Stack of this staster",
+  "home.txt4": "React, Navi, Typescript, Webpack, Prettier, Eslint, Sass, Css modules, React intl, Atomic design, Husky and Commitizen"
 }

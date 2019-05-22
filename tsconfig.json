@@ -8,6 +8,7 @@
     "baseUrl": ".",
     "paths": {
       "config/*": ["src/config/*"],
+      "state/*": ["src/state/*"],
       "pages/*": ["src/components/pages/*"],
       "templates/*": ["src/components/templates/*"],
       "organisms/*": ["src/components/organisms/*"],

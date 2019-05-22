@@ -1,7 +1,11 @@
-html, body {
+html, body, body>div {
   height: 100%;
   margin: 0px;
   padding: 0px;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
 }
 
 @font-face {
