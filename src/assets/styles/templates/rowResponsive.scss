@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  @media screen and (max-width: 700px) {
+    flex-direction: column;
+  }
+}
+
+.left, .center, .right {
+  display: flex;
+  flex-grow: 1;
+}
