@@ -6,7 +6,7 @@ import * as styles from 'assets/styles/atoms/description.scss';
 const Description: React.SFC<DescriptionProps> = (
   { textId, text, }
 ): ReactElement => (
-  <h5 className={styles.text}>{textId ? <FormattedMessage id={textId} /> : text}</h5>
+  <h5 className={styles.text}>{text || <FormattedMessage id={textId} />}</h5>
 );
 
 interface DescriptionProps {
