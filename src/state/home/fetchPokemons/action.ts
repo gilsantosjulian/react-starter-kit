@@ -1,4 +1,5 @@
 import actionHelper from 'utils/actionHelper';
+import { HIDE_SPINNER, SHOW_SPINNER, } from 'state/ui/spinner/actionTypes';
 import {
   WILL_FETCH_POKEMONS,
   FETCHING_POKEMONS,
@@ -8,6 +9,11 @@ import {
 export default (
   dispatch
 ): void => {
+  dispatch(
+    actionHelper(
+      SHOW_SPINNER
+    )
+  );
   dispatch(
     actionHelper(
       WILL_FETCH_POKEMONS
@@ -70,10 +76,17 @@ export default (
       )
     )
     .finally(
-      (): void => dispatch(
-        actionHelper(
-          DID_FETCH_POKEMONS
-        )
-      )
+      (): void => {
+        dispatch(
+          actionHelper(
+            HIDE_SPINNER
+          )
+        );
+        dispatch(
+          actionHelper(
+            DID_FETCH_POKEMONS
+          )
+        );
+      },
     );
 };

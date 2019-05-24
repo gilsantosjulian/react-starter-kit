@@ -1,0 +1,26 @@
+@import '../colors.scss';
+
+.container {
+  width: 100%;
+  position: absolute;
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25vw;
+  height: 2px;
+  background: $primary;
+  animation-name: horizontal-movement;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes horizontal-movement {
+  from {
+    transform: translateX(0vw);
+  }
+  to {
+    transform: translateX(75vw);
+  }
+}
