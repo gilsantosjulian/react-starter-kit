@@ -5,7 +5,7 @@ import Paragraph from 'molecules/Paragraph';
 import * as styles from 'assets/styles/organisms/error.scss';
 
 const image = require(
-  'images/logo.png'
+  'images/starter-kit-logo-animated.svg'
 );
 
 const Error: React.SFC<ErrorProps> = (
