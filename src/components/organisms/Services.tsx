@@ -5,7 +5,10 @@ import * as styles from 'assets/styles/organisms/services.scss';
 const Services: React.SFC<ServicesProps> = (
   { services, }
 ): ReactElement => (
-  <div className={styles.row}>{services}</div>
+  <div className={styles.row}>
+    {services}
+    <div>tests</div>
+  </div>
 );
 interface ServicesProps {
   services: ReactElement[];
