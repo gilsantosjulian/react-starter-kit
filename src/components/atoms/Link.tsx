@@ -1,15 +1,16 @@
 import React, { ReactElement, } from 'react';
 
+import * as styles from 'assets/styles/atoms/link.scss';
+
 const Link: React.SFC<LinkProps> = (
-  { path, title, }
+  { href, title, }
 ): ReactElement => (
-  <a href={path} title={title}>
+  <a className={styles.a} href={href} title={title}>
     {title}
   </a>
 );
 
 interface LinkProps {
-  path: string;
   title: string;
   href: string;
 }

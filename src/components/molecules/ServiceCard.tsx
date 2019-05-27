@@ -14,10 +14,10 @@ const ServiceCard: SFC<ServiceCardProps> = (
   }
 ): ReactElement => (
   <div className={styles.card}>
-    <Img src={image} alt="image" />
+    <Img src={image} alt={`image of ${title}`} />
     <Paragraph title={title} description={species} />
     <Description text={status} />
-    <Link href={image} path={image} title="Read more" />
+    <Link href={image} title="Read more" />
   </div>
 );
 
