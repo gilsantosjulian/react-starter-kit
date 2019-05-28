@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "noImplicitAny": true,
+    "resolveJsonModule": true,
     "jsx": "react",
     "esModuleInterop": true,
     "lib": ["dom", "es2015", "es2016", "es2017"],
@@ -7,7 +9,22 @@
     "baseUrl": ".",
     "paths": {
       "config/*": ["src/config/*"],
-      "views/*": ["src/views/*"],
+      "state/*": ["src/state/*"],
+      "pages/*": ["src/components/pages/*"],
+      "templates/*": ["src/components/templates/*"],
+      "organisms/*": ["src/components/organisms/*"],
+      "molecules/*": ["src/components/molecules/*"],
+      "atoms/*": ["src/components/atoms/*"],
+      "utils/*": ["src/utils/*"],
+      "assets/*": ["src/assets/*"],
+      "images/*": ["src/assets/images/*"],
+      "strings/*": ["src/assets/strings/*"],
+      "publicViewsStyles/*": ["src/assets/styles/pages/public/*"],
+      "privateViewsStyles/*": ["src/assets/styles/pages/private/*"],
+      "templatesStyles/*": ["src/assets/styles/templates/*"],
+      "organismsStyles/*": ["src/assets/styles/organisms/*"],
+      "moleculesStyles/*": ["src/assets/styles/molecules/*"],
+      "atomsStyles/*": ["src/assets/styles/atoms/*"],
     },
   },
   "include": [

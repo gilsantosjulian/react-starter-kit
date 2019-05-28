@@ -3,9 +3,9 @@ module.exports = {
     es6: true,
     browser: true,
   },
-  extends: ['airbnb'],
+  extends: ['airbnb', 'plugin:@typescript-eslint/recommended'],
   plugins: [],
-  parser: 'babel-eslint',
+  parser:  '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 6,
     sourceType: 'module',
@@ -30,5 +30,15 @@ module.exports = {
     'class-methods-use-this': 'off', // is useful when we call methods on class components
     'comma-dangle': ['error', 'always'], // use always trailing comas
     'no-trailing-spaces': 'off', // allow trailing spaces
+    'no-plusplus': 'off', // enable plusplus e.g. let a = 1; a++;
+    'no-await-in-loop': 'off', // enable await for using it inside a loop
+    'function-paren-newline': ['error', { minItems: 1 }], // add new line in functions that has one argument or more
+    'import/prefer-default-export': 'off', // export default not mandatory
+    '@typescript-eslint/explicit-function-return-type': 'error', // you have to specify the return type
+    '@typescript-eslint/indent': ['error', 2], // indentation
+    'react/prop-types': 'off', // disable verification of prop types because we are using typescript interfaces instead of prop types
+    'array-bracket-spacing': ['error', 'always'], // to put sapaces at the begining and the end of array
+    '@typescript-eslint/no-var-requires': false, // flag for enabling and disabling require
+    'no-param-reassign': ['error', { 'props': false }], // flag for enable reassignation of properties of a variable
   },
 };

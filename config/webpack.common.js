@@ -8,16 +8,37 @@ module.exports = {
     path: path.join(__dirname, '../dist'),
     publicPath: '/',
   },
-  resolve : {
+  resolve: {
     extensions: [
       '.js',
       '.ts',
       '.tsx',
       '.json',
+      '.scss',
+      '.css',
+      '.png',
+      '.svg',
+      '.jpeg',
+      '.jpg',
     ],
     alias: {
       config: path.resolve(__dirname, '../src/config/'),
-      views: path.resolve(__dirname, '../src/views/'),
+      state: path.resolve(__dirname, '../src/state/'),
+      pages: path.resolve(__dirname, '../src/components/pages/'),
+      templates: path.resolve(__dirname, '../src/components/templates/'),
+      organisms: path.resolve(__dirname, '../src/components/organisms/'),
+      molecules: path.resolve(__dirname, '../src/components/molecules/'),
+      atoms: path.resolve(__dirname, '../src/components/atoms/'),
+      utils: path.resolve(__dirname, '../src/utils/'),
+      assets: path.resolve(__dirname, '../src/assets/'),
+      images: path.resolve(__dirname, '../src/assets/images/'),
+      strings: path.resolve(__dirname, '../src/assets/strings/'),
+      publicViewsStyles: path.resolve(__dirname, '../src/assets/styles/pages/public/'),
+      privateViewsStyles: path.resolve(__dirname, '../src/assets/styles/pages/private/'),
+      templatesStyles: path.resolve(__dirname, '../src/assets/styles/templates/'),
+      organismsStyles: path.resolve(__dirname, '../src/assets/styles/organisms/'),
+      moleculesStyles: path.resolve(__dirname, '../src/assets/styles/molecules/'),
+      atomsStyles: path.resolve(__dirname, '../src/assets/styles/atoms/'),
     },
   },
   module: {
@@ -52,6 +73,48 @@ module.exports = {
         ],
         exclude: /node_modules/,
       },
+      {
+        test: /\.css|.scss$/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'typings-for-css-modules-loader',
+            options: {
+              modules: true,
+              namedExport: true,
+              camelCase: true,
+            },
+          },
+          {
+            loader: 'sass-loader',
+          },
+        ],
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: 'images',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(eot|ttf|woff|woff2)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: 'fonts',
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
@@ -59,6 +122,7 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: './public/index.html',
       filename: './index.html',
+      favicon: './public/favicon.png',
     }),
   ],
 };
