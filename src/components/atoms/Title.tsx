@@ -6,7 +6,7 @@ import * as styles from 'assets/styles/atoms/title.scss';
 const Title: React.SFC<TitleProps> = (
   { textId, text, }
 ): ReactElement => (
-  <h3 className={styles.text}>{textId ? <FormattedMessage id={textId} /> : text}</h3>
+  <h3 className={styles.text}>{text || <FormattedMessage id={textId} />}</h3>
 );
 
 interface TitleProps {

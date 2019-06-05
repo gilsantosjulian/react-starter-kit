@@ -9,6 +9,7 @@ import reducer from 'state/reducer';
 import initialState from 'state/initialState';
 import NotFound from 'pages/public/NotFound';
 import Splash from 'pages/public/Splash';
+import HorizontalSpinner from 'atoms/HorizontalSpinner';
 import { getLanguage, getMessage, } from 'config/internationalization';
 import 'assets/styles/global.scss';
 
@@ -26,6 +27,7 @@ getRoutes().then(
           <Suspense fallback={<Splash />}>
             <Router routes={routes}>
               <NotFoundBoundary render={(): ReactElement => <NotFound />}>
+                <HorizontalSpinner />
                 <View />
               </NotFoundBoundary>
             </Router>
