@@ -1,6 +1,6 @@
-import React, { ReactElement, } from 'react';
+import React, { ReactElement, } from 'react'
 
-import * as styles from 'assets/styles/templates/rowResponsive.scss';
+import * as styles from 'assets/styles/templates/rowResponsive.scss'
 
 const RowResponsive: React.SFC<RowResponsiveProps> = (
   {
@@ -14,11 +14,11 @@ const RowResponsive: React.SFC<RowResponsiveProps> = (
     <div className={styles.center}>{children}</div>
     <div className={styles.right}>{right}</div>
   </div>
-);
+)
 
 interface RowResponsiveProps {
   left: ReactElement;
   right: ReactElement;
 }
 
-export default RowResponsive;
+export default RowResponsive

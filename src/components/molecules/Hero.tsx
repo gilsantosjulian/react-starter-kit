@@ -1,8 +1,8 @@
-import React, { ReactElement, } from 'react';
+import React, { ReactElement, } from 'react'
 
-import Description from 'atoms/Description';
-import SmallImage from 'atoms/SmallImage';
-import * as styles from 'assets/styles/molecules/hero.scss';
+import Description from 'atoms/Description'
+import SmallImage from 'atoms/SmallImage'
+import * as styles from 'assets/styles/molecules/hero.scss'
 
 const Hero: React.SFC<HeroProps> = (
   { image, textId, text, }
@@ -11,7 +11,7 @@ const Hero: React.SFC<HeroProps> = (
     <SmallImage image={image} />
     {textId ? <Description textId={textId} /> : <Description text={text} />}
   </div>
-);
+)
 
 interface HeroProps {
   image: string;
@@ -19,4 +19,4 @@ interface HeroProps {
   text?: string;
 }
 
-export default Hero;
+export default Hero

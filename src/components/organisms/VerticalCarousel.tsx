@@ -1,7 +1,7 @@
-import React, { ReactElement, } from 'react';
+import React, { ReactElement, } from 'react'
 
-import Hero from 'molecules/Hero';
-import * as styles from 'organismsStyles/verticalCarousel.scss';
+import Hero from 'molecules/Hero'
+import * as styles from 'organismsStyles/verticalCarousel.scss'
 
 const VerticalCarousel: React.SFC<VerticalCarouselProps> = (
   {
@@ -13,13 +13,13 @@ const VerticalCarousel: React.SFC<VerticalCarouselProps> = (
   <div className={styles.container}>
     {data.map(
       (
-        item
+        item: Item
       ): ReactElement => (
         <Hero key={item[labelKey]} image={item[imageKey]} text={item[labelKey]} />
       ),
     )}
   </div>
-);
+)
 
 interface VerticalCarouselProps {
   data: object[];
@@ -27,4 +27,8 @@ interface VerticalCarouselProps {
   labelKey: string;
 }
 
-export default VerticalCarousel;
+interface Item {
+  [key: string]: string;
+}
+
+export default VerticalCarousel

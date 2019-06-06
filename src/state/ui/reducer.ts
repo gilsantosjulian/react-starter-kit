@@ -1,9 +1,11 @@
-import spinnerReducer from './spinner/reducer';
+import { Ui, } from 'types/state'
+import Action from 'types/action'
+import spinnerReducer from './spinner/reducer'
 
 export default (
-  { spinner, }, action
+  { spinner, }: Ui, action: Action
 ): object => ({
   spinner: spinnerReducer(
     spinner, action
   ),
-});
+})

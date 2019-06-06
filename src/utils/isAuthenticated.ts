@@ -1,1 +1,1 @@
-export default (): boolean => true;
+export default (): boolean => true
