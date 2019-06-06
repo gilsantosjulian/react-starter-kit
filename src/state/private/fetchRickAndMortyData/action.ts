@@ -7,7 +7,7 @@ import {
 } from './actionTypes'
 
 export default (
-  dispatch
+  dispatch: any
 ): void => {
   dispatch(
     actionHelper(
@@ -33,7 +33,7 @@ export default (
     .then(
       (
         response
-      ): any[] => response.data.results,
+      ): any[] => response.data.results
     )
     .then(
       (
