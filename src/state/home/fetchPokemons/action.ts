@@ -1,5 +1,6 @@
 import actionHelper from 'utils/actionHelper';
 import { HIDE_SPINNER, SHOW_SPINNER, } from 'state/ui/spinner/actionTypes';
+import requester from 'services/requester';
 import {
   WILL_FETCH_POKEMONS,
   FETCHING_POKEMONS,
@@ -20,48 +21,36 @@ export default (
     )
   );
 
-  fetch(
-    'https://pokeapi.co/api/v2/pokemon'
-  )
-    .then(
-      (
-        response
-      ): Promise<any> => response.json()
+  requester
+    .get(
+      'https://pokeapi.co/api/v2/pokemon'
     )
     .then(
       (
-        data
+        response
       ): Promise<any> => Promise.all(
-        data.results.map(
+        response.data.results.map(
           (
             item
-          ): Promise<Response> => fetch(
+          ): Promise<Response> => requester.get(
             item.url
           )
-        )
+        ),
       ),
     )
     .then(
       (
         responses
-      ): Promise<any> => Promise.all(
-        responses.map(
-          (
-            response
-          ): Promise<any> => response.json()
-        )
-      ),
-    )
-    .then(
-      (
-        data
       ): void => dispatch(
         actionHelper(
           FETCHING_POKEMONS,
-          data.map(
+          responses.map(
             (
-              item
-            ): object => ({ name: item.name, image: item.sprites.front_shiny, }),
+              response
+            ): object => ({
+              name: response.data.name,
+              image: response.data.sprites.front_shiny,
+            }),
           ),
         ),
       ),
