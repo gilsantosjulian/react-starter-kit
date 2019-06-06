@@ -1,4 +1,7 @@
 import produce from 'immer'
+import Action from 'types/action'
+import Draft from 'types/draft'
+import { FetchRickAndMortyData, } from 'types/state'
 
 import setInitialData from 'state/utils/setInitialData'
 import setError from 'state/utils/setError'
@@ -11,11 +14,11 @@ import {
 } from './actionTypes'
 
 export default (
-  state, action
+  state: FetchRickAndMortyData, action: Action
 ): object => produce(
   state,
   (
-    draft
+    draft: Draft
   ): void => {
     console.log(
       'TYPE'
