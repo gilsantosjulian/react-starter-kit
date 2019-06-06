@@ -5,4 +5,4 @@ export default (
   (
     match, another, index
   ): string => (index === 0 ? match.toLowerCase() : match),
-);
+)

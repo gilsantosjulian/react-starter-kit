@@ -1,5 +1,7 @@
+import Draft from 'types/draft'
+
 export default (
-  draft
+  draft: Draft
 ): void => {
-  draft.status.isRunning = true;
-};
+  draft.status.isRunning = true
+}

@@ -1,24 +1,24 @@
-import React, { ReactElement, useEffect, } from 'react';
+import React, { ReactElement, useEffect, } from 'react'
 
-import * as styles from 'publicViewsStyles/home.scss';
-import { useGlobalState, } from 'state/StoreProvider';
-import fetchPokemons from 'state/home/fetchPokemons/action';
-import RowResponsive from 'templates/RowResponsive';
-import CenteredParagraph from 'organisms/CenteredParagraph';
-import VerticalCarousel from 'organisms/VerticalCarousel';
+import * as styles from 'publicViewsStyles/home.scss'
+import { useGlobalState, } from 'state/StoreProvider'
+import fetchPokemons from 'state/home/fetchPokemons/action'
+import RowResponsive from 'templates/RowResponsive'
+import CenteredParagraph from 'organisms/CenteredParagraph'
+import VerticalCarousel from 'organisms/VerticalCarousel'
 
 const Home: React.SFC = (): ReactElement => {
-  const [ state, dispatch, ] = useGlobalState();
+  const [ state, dispatch, ] = useGlobalState()
 
   useEffect(
     (): void => {
       if (!state.home.fetchPokemons.pokemons.length) {
         fetchPokemons(
           dispatch
-        );
+        )
       }
     }, []
-  );
+  )
 
   return (
     <div className={styles.container}>
@@ -33,7 +33,7 @@ const Home: React.SFC = (): ReactElement => {
         />
       </RowResponsive>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

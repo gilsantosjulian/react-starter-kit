@@ -4,11 +4,11 @@ import React, {
   useContext,
   ReactElement,
   Reducer,
-} from 'react';
+} from 'react'
 
 const StoreContext = createContext(
   []
-);
+)
 
 export const StoreProvider: React.SFC<StoreProviderProps> = (
   {
@@ -19,12 +19,12 @@ export const StoreProvider: React.SFC<StoreProviderProps> = (
 ): ReactElement => {
   const [ state, dispatch, ] = useReducer(
     reducer, initialState
-  );
+  )
 
   return (
     <StoreContext.Provider value={[ state, dispatch, ]}>{children}</StoreContext.Provider>
-  );
-};
+  )
+}
 
 interface StoreProviderProps {
   reducer: Reducer<any, any>;
@@ -33,4 +33,4 @@ interface StoreProviderProps {
 
 export const useGlobalState = (): any[] => useContext(
   StoreContext
-);
+)

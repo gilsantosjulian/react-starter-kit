@@ -1,81 +1,69 @@
-import actionHelper from 'utils/actionHelper';
-import { HIDE_SPINNER, SHOW_SPINNER, } from 'state/ui/spinner/actionTypes';
-import requester from 'services/requester';
+import actionHelper from 'utils/actionHelper'
+import { HIDE_SPINNER, SHOW_SPINNER, } from 'state/ui/spinner/actionTypes'
+import requester from 'services/requester'
+import Response from 'types/response'
 import {
   WILL_FETCH_POKEMONS,
   FETCHING_POKEMONS,
   DID_FETCH_POKEMONS,
-} from './actionTypes';
+} from './actionTypes'
 
-export default (
-  dispatch
-): void => {
+export default async (dispatch: any): Promise<void> => {
   dispatch(
     actionHelper(
       SHOW_SPINNER
     )
-  );
+  )
   dispatch(
     actionHelper(
       WILL_FETCH_POKEMONS
     )
-  );
+  )
 
-  requester
-    .get(
+  try {
+    const response: Response = await requester.get(
       'https://pokeapi.co/api/v2/pokemon'
     )
-    .then(
+    const requests = response.data.results.map(
       (
-        response
-      ): Promise<any> => Promise.all(
-        response.data.results.map(
-          (
-            item
-          ): Promise<Response> => requester.get(
-            item.url
-          )
-        ),
+        item: any
+      ): Promise<object> => requester.get(
+        item.url
       ),
     )
-    .then(
-      (
-        responses
-      ): void => dispatch(
-        actionHelper(
-          FETCHING_POKEMONS,
-          responses.map(
-            (
-              response
-            ): object => ({
-              name: response.data.name,
-              image: response.data.sprites.front_shiny,
-            }),
-          ),
-        ),
-      ),
+    const responses: Response[] = await Promise.all(
+      requests
     )
-    .catch(
+    const data = responses.map(
       (
-        error
-      ): void => dispatch(
-        actionHelper(
-          FETCHING_POKEMONS, error, true
-        )
+        res: Response
+      ): object => ({
+        name: res.data.name,
+        image: res.data.sprites.front_shiny,
+      }),
+    )
+
+    dispatch(
+      actionHelper(
+        FETCHING_POKEMONS, data
       )
     )
-    .finally(
-      (): void => {
-        dispatch(
-          actionHelper(
-            HIDE_SPINNER
-          )
-        );
-        dispatch(
-          actionHelper(
-            DID_FETCH_POKEMONS
-          )
-        );
-      },
-    );
-};
+  } catch (error) {
+    dispatch(
+      actionHelper(
+        FETCHING_POKEMONS, error, true
+      )
+    )
+  }
+
+  dispatch(
+    actionHelper(
+      HIDE_SPINNER
+    )
+  )
+  dispatch(
+    actionHelper(
+      DID_FETCH_POKEMONS
+    )
+  )
+}

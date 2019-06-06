@@ -1,6 +1,9 @@
+import Draft from 'types/draft'
+import Action from 'types/action'
+
 export default (
-  draft, action, key
+  draft: Draft, action: Action, key: string
 ): void => {
-  if (draft.status && draft.status.wasASuccess) draft.status.wasASuccess = true;
-  draft[key] = action.payload;
-};
+  if (draft.status && draft.status.wasASuccess) draft.status.wasASuccess = true
+  draft[key] = action.payload
+}
