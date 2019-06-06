@@ -8,8 +8,8 @@ const Paragraph: React.SFC<ParagraphProps> = (
   { title, description, }
 ): ReactElement => (
   <div className={styles.container}>
-    <Title textId={title} />
-    <Description textId={description} />
+    <Title text={title} />
+    <Description text={description} />
   </div>
 )
 

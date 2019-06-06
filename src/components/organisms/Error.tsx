@@ -12,7 +12,7 @@ const Error: React.SFC<ErrorProps> = (
   { title, description, }
 ): ReactElement => (
   <div className={styles.container}>
-    <Hero image={image} textId="error.txt1" />
+    <Hero image={image} text="error.txt1" />
     <Paragraph title={title} description={description} />
   </div>
 )
