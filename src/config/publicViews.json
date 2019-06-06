@@ -3,10 +3,5 @@
     "name": "Home",
     "path": "/",
     "extension": "tsx"
-  },
-  {
-    "name": "Splash",
-    "path": "/splash",
-    "extension": "tsx"
   }
 ]
