@@ -5,8 +5,17 @@ export interface FetchPokemons {
   status: Status;
 }
 
+export interface FetchRickAndMortyData {
+  rickyAndMortyData: [];
+  status: Status;
+}
+
 export interface Home {
   fetchPokemons: FetchPokemons;
+}
+
+export interface Priv {
+  fetchRickAndMortyData: FetchRickAndMortyData;
 }
 
 export interface Spinner {
@@ -20,4 +29,5 @@ export interface Ui {
 export default interface State {
   home: Home;
   ui: Ui;
+  priv: Priv;
 }

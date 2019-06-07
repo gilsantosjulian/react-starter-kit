@@ -1,6 +1,6 @@
 import React, { ReactElement, SFC, } from 'react'
 
-import * as styles from 'assets/styles/atoms/smallImage.scss'
+import * as styles from 'assets/styles/atoms/circleImage.scss'
 
 const Image: SFC<ImageProps> = (
   { src, alt, }
