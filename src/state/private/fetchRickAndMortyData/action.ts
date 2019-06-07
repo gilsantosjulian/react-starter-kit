@@ -1,74 +1,58 @@
 import actionHelper from 'utils/actionHelper'
-import axios from 'axios'
+import { HIDE_SPINNER, SHOW_SPINNER, } from 'state/ui/spinner/actionTypes'
+import requester from 'services/requester'
+import Response from 'types/response'
 import {
   WILL_FETCH_RICKY_AND_MORTY_DATA,
   FETCHING_RICKY_AND_MORTY_DATA,
   DID_FETCH_RICKY_AND_MORTY_DATA,
 } from './actionTypes'
 
-export default (
-  dispatch: any
-): void => {
+export default async (dispatch: any): Promise<void> => {
   dispatch(
     actionHelper(
+      SHOW_SPINNER
+    ), actionHelper(
       WILL_FETCH_RICKY_AND_MORTY_DATA
     )
   )
-  const url = 'https://rickandmortyapi.com/api/character'
-  const options: object = {
-    url,
-    method: 'GET',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Headers': '*',
-    },
-    mode: 'cors',
-    cache: 'default',
-  }
 
-  axios(
-    url, options
-  )
-    .then(
-      (
-        response
-      ): any[] => response.data.results
+  const url = 'https://rickandmortyapi.com/api/character'
+  try {
+    const response: Response = await requester.get(
+      url
     )
-    .then(
-      (
-        data
-      ): void => dispatch(
-        actionHelper(
-          FETCHING_RICKY_AND_MORTY_DATA,
-          data.map(
-            (
-              item
-            ): object => ({
-              id: item.id,
-              name: item.name,
-              species: item.species,
-              status: item.status,
-              image: item.image,
-            }),
-          ),
+    const { results, } = response.data
+
+    dispatch(
+      actionHelper(
+        FETCHING_RICKY_AND_MORTY_DATA,
+        results.map(
+          (
+            item: any
+          ): object => ({
+            id: item.id,
+            name: item.name,
+            species: item.species,
+            status: item.status,
+            image: item.image,
+          }),
         ),
       ),
     )
-    .catch(
-      (
-        error
-      ): void => dispatch(
-        actionHelper(
-          FETCHING_RICKY_AND_MORTY_DATA, error, true
-        )
-      ),
-    )
-    .finally(
-      (): void => dispatch(
-        actionHelper(
-          DID_FETCH_RICKY_AND_MORTY_DATA
-        )
+  } catch (error) {
+    dispatch(
+      actionHelper(
+        FETCHING_RICKY_AND_MORTY_DATA, error, true
       )
     )
+  }
+
+  dispatch(
+    actionHelper(
+      HIDE_SPINNER
+    ), actionHelper(
+      DID_FETCH_RICKY_AND_MORTY_DATA
+    )
+  )
 }

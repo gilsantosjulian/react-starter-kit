@@ -1,1 +1,1 @@
-export const textDanger: string;
+export const section: string;
