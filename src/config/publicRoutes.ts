@@ -1,23 +1,24 @@
-import { route, } from 'navi';
+import { route, } from 'navi'
 
-import publicViews from 'config/publicViews.json';
-import asyncForEach from 'utils/asyncForEach';
-import upperCamelCaseToLowerCamelCase from 'utils/upperCamelCaseToLowerCamelCase';
+import publicViews from 'config/publicViews.json'
+import asyncForEach from 'utils/asyncForEach'
+import upperCamelCaseToLowerCamelCase from 'utils/upperCamelCaseToLowerCamelCase'
+import Route from 'types/route'
 
 export default async (): Promise<object> => {
-  const routes = {};
+  const routes: any = {}
 
   await asyncForEach(
     publicViews,
-    async (publicView): Promise<void> => {
+    async (publicView: Route): Promise<void> => {
       const specifiConfiguration = await import(
         `pages/public/config/${upperCamelCaseToLowerCamelCase(
           publicView.name
         )}`
-      );
-      const url = specifiConfiguration.default.url || publicView.path;
+      )
+      const path = specifiConfiguration.default.path || publicView.path
 
-      routes[url] = route(
+      routes[path] = route(
         {
           ...specifiConfiguration.default,
           title: publicView.name,
@@ -25,9 +26,9 @@ export default async (): Promise<object> => {
             `pages/public/${publicView.name}.${publicView.extension}`
           ),
         }
-      );
+      )
     },
-  );
+  )
 
-  return { ...routes, };
-};
+  return { ...routes, }
+}

@@ -1,9 +1,9 @@
-import React, { ReactElement, SFC, } from 'react';
-import Description from 'atoms/Description';
-import Img from 'atoms/Img';
-import Link from 'atoms/Link';
-import * as styles from 'assets/styles/molecules/serviceCard.scss';
-import Paragraph from './Paragraph';
+import React, { ReactElement, SFC, } from 'react'
+import Description from 'atoms/Description'
+import Img from 'atoms/Img'
+import Link from 'atoms/Link'
+import * as styles from 'assets/styles/molecules/serviceCard.scss'
+import Paragraph from './Paragraph'
 
 const ServiceCard: SFC<ServiceCardProps> = (
   {
@@ -17,9 +17,9 @@ const ServiceCard: SFC<ServiceCardProps> = (
     <Img src={image} alt={`image of ${title}`} />
     <Paragraph title={title} description={species} />
     <Description text={status} />
-    <Link href={image} title="Read more" />
+    <Link href={image} title="See image" />
   </div>
-);
+)
 
 interface ServiceCardProps {
   title: string;
@@ -28,4 +28,4 @@ interface ServiceCardProps {
   image: string;
 }
 
-export default ServiceCard;
+export default ServiceCard

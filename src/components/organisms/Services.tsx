@@ -1,9 +1,10 @@
-import React, { ReactElement, } from 'react';
-import Description from 'atoms/Description';
-import ServiceCard from 'molecules/ServiceCard';
-import Title from 'atoms/Title';
+import React, { ReactElement, } from 'react'
+import Description from 'atoms/Description'
+import ServiceCard from 'molecules/ServiceCard'
+import Title from 'atoms/Title'
 
-import * as styles from 'assets/styles/organisms/services.scss';
+import * as styles1 from 'privateViewsStyles/private.scss'
+import * as styles2 from 'assets/styles/organisms/services.scss'
 
 const Services: React.SFC<ServicesProps> = (
   {
@@ -12,7 +13,7 @@ const Services: React.SFC<ServicesProps> = (
     services,
   }
 ): ReactElement => {
-  const ID = 'Service Section';
+  const ID = 'Service Section'
   const servicesItems = services.map(
     (
       service
@@ -25,20 +26,20 @@ const Services: React.SFC<ServicesProps> = (
         image={service.image}
       />
     ),
-  );
+  )
 
   return (
-    <section id={ID}>
+    <section id={ID} className={styles1.section}>
       <Title text={title} />
       <Description text={subtitle} />
-      <div className={styles.row}>{servicesItems}</div>
+      <div className={styles2.row}>{servicesItems}</div>
     </section>
-  );
-};
+  )
+}
 interface ServicesProps {
   title: string;
   subtitle?: string;
   services: any[];
 }
 
-export default Services;
+export default Services

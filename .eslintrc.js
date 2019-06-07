@@ -40,5 +40,6 @@ module.exports = {
     'array-bracket-spacing': ['error', 'always'], // to put sapaces at the begining and the end of array
     '@typescript-eslint/no-var-requires': false, // flag for enabling and disabling require
     'no-param-reassign': ['error', { 'props': false }], // flag for enable reassignation of properties of a variable
+    semi: ['error', 'never'], // to disable checking of semicolon at the end of a class or interface because Prettier removes them
   },
 };

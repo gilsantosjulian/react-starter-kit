@@ -8,6 +8,8 @@
     "target": "es5",
     "baseUrl": ".",
     "paths": {
+      "types/*": ["src/types/*"],
+      "services/*": ["src/services/*"],
       "config/*": ["src/config/*"],
       "state/*": ["src/state/*"],
       "pages/*": ["src/components/pages/*"],
