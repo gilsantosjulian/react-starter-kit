@@ -1,3 +1,6 @@
-.text-green {
-  color: #AEF123;
+@import '../../colors.scss';
+
+.container {
+  background: $secondary;
+  height: 100%;
 }

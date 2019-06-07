@@ -1,6 +1,6 @@
 import(
   './index'
-);
+)
 
 if ('serviceWorker' in navigator) {
   window.addEventListener(
@@ -16,7 +16,7 @@ if ('serviceWorker' in navigator) {
           ): void => {
             console.log(
               'Service workers registered: ', registration
-            );
+            )
           },
         )
         .catch(
@@ -25,9 +25,9 @@ if ('serviceWorker' in navigator) {
           ): void => {
             console.log(
               'Service workers registration failed: ', registrationError
-            );
+            )
           },
-        );
+        )
     },
-  );
+  )
 }

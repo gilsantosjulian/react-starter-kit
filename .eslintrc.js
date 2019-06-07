@@ -38,5 +38,8 @@ module.exports = {
     '@typescript-eslint/indent': ['error', 2], // indentation
     'react/prop-types': 'off', // disable verification of prop types because we are using typescript interfaces instead of prop types
     'array-bracket-spacing': ['error', 'always'], // to put sapaces at the begining and the end of array
+    '@typescript-eslint/no-var-requires': false, // flag for enabling and disabling require
+    'no-param-reassign': ['error', { 'props': false }], // flag for enable reassignation of properties of a variable
+    semi: ['error', 'never'], // to disable checking of semicolon at the end of a class or interface because Prettier removes them
   },
 };

@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "noImplicitAny": true,
     "resolveJsonModule": true,
     "jsx": "react",
     "esModuleInterop": true,
@@ -7,7 +8,10 @@
     "target": "es5",
     "baseUrl": ".",
     "paths": {
+      "types/*": ["src/types/*"],
+      "services/*": ["src/services/*"],
       "config/*": ["src/config/*"],
+      "state/*": ["src/state/*"],
       "pages/*": ["src/components/pages/*"],
       "templates/*": ["src/components/templates/*"],
       "organisms/*": ["src/components/organisms/*"],

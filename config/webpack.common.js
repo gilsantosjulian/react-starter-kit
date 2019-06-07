@@ -22,7 +22,10 @@ module.exports = {
       '.jpg',
     ],
     alias: {
+      types: path.resolve(__dirname, '../src/types/'),
+      services: path.resolve(__dirname, '../src/services/'),
       config: path.resolve(__dirname, '../src/config/'),
+      state: path.resolve(__dirname, '../src/state/'),
       pages: path.resolve(__dirname, '../src/components/pages/'),
       templates: path.resolve(__dirname, '../src/components/templates/'),
       organisms: path.resolve(__dirname, '../src/components/organisms/'),
