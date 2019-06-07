@@ -17,7 +17,7 @@ const ServiceCard: SFC<ServiceCardProps> = (
     <Img src={image} alt={`image of ${title}`} />
     <Paragraph title={title} description={species} />
     <Description text={status} />
-    <Link href={image} title="See image" />
+    <Link href={image} title="private.txt3" />
   </div>
 )
 

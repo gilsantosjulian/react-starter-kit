@@ -4,10 +4,8 @@ import Services from 'organisms/Services'
 import { useGlobalState, } from 'state/StoreProvider'
 
 const ID = 'Services Section'
-const serviceTitle = 'What we do'
-const serviceSubtitle = `
-      Having and managing a correct marketing strategy 
-      is crucial in a fast moving market.`
+const serviceTitle = 'private.txt1'
+const serviceSubtitle = 'private.txt2'
 
 const Private: React.SFC = (): ReactElement => {
   const [ state, dispatch, ] = useGlobalState()

@@ -20,13 +20,6 @@ export default (
   (
     draft: Draft
   ): void => {
-    console.log(
-      'TYPE'
-    )
-
-    console.log(
-      action.type
-    )
     switch (action.type) {
       case WILL_FETCH_RICKY_AND_MORTY_DATA:
         setInitialData(
