@@ -1,41 +1,32 @@
-import React, { ReactElement, } from 'react'
-
-import { textDanger, } from 'privateViewsStyles/private.scss'
+import React, { ReactElement, useEffect, } from 'react'
+import fetchRickAndMortyData from 'state/private/fetchRickAndMortyData/action'
 import Services from 'organisms/Services'
+import { useGlobalState, } from 'state/StoreProvider'
 
-const result = [
-  {
-    id: 1,
-    name: 'Rick Sanchez',
-    species: 'Human',
-    status: 'Alive',
-    image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
-  },
-  {
-    id: 2,
-    name: 'Morty Smith',
-    species: 'Human',
-    status: 'Alive',
-    image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
-  },
-  {
-    id: 3,
-    name: 'Summer Smith',
-    species: 'Human',
-    status: 'Alive',
-    image: 'https://rickandmortyapi.com/api/character/avatar/3.jpeg',
-  },
-]
+const ID = 'Services Section'
+const serviceTitle = 'private.txt1'
+const serviceSubtitle = 'private.txt2'
 
-const serviceTitle = 'What we do'
-const serviceSubtitle = `
-      Having and managing a correct marketing strategy 
-      is crucial in a fast moving market.`
+const Private: React.SFC = (): ReactElement => {
+  const [ state, dispatch, ] = useGlobalState()
 
-const Private: React.SFC = (): ReactElement => (
-  <div className={textDanger}>
-    <Services title={serviceTitle} subtitle={serviceSubtitle} services={result} />
-  </div>
-)
+  useEffect(
+    (): void => {
+      if (!state.priv.fetchRickAndMortyData.rickyAndMortyData.length) {
+        fetchRickAndMortyData(
+          dispatch
+        )
+      }
+    }, []
+  )
+
+  const data = state.priv.fetchRickAndMortyData.rickyAndMortyData
+
+  return (
+    <div id={ID}>
+      <Services title={serviceTitle} subtitle={serviceSubtitle} services={data} />
+    </div>
+  )
+}
 
 export default Private

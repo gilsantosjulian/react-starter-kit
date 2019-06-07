@@ -28,7 +28,7 @@ const Services: React.SFC<ServicesProps> = (
   )
 
   return (
-    <section id={ID}>
+    <section id={ID} className={styles.section}>
       <Title text={title} />
       <Description text={subtitle} />
       <div className={styles.row}>{servicesItems}</div>

@@ -1,14 +1,15 @@
 import State from 'types/state'
 import Action from 'types/action'
 import homeReducer from './home/reducer'
+import privateReducer from './private/reducer'
 import uiReducer from './ui/reducer'
 import middlewares from './middlewares'
 
 export default (
-  { home, ui, }: State, action: Action
+  { home, ui, priv, }: State, action: Action
 ): object => {
   middlewares(
-    { home, ui, }, action
+    { home, ui, priv, }, action
   )
 
   return {
@@ -17,6 +18,9 @@ export default (
     ),
     ui: uiReducer(
       ui, action
+    ),
+    priv: privateReducer(
+      priv, action
     ),
   }
 }
