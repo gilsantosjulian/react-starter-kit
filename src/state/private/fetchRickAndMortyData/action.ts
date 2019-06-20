@@ -12,7 +12,10 @@ export default async (dispatch: any): Promise<void> => {
   dispatch(
     actionHelper(
       SHOW_SPINNER
-    ), actionHelper(
+    )
+  )
+  dispatch(
+    actionHelper(
       WILL_FETCH_RICKY_AND_MORTY_DATA
     )
   )
@@ -51,7 +54,10 @@ export default async (dispatch: any): Promise<void> => {
   dispatch(
     actionHelper(
       HIDE_SPINNER
-    ), actionHelper(
+    )
+  )
+  dispatch(
+    actionHelper(
       DID_FETCH_RICKY_AND_MORTY_DATA
     )
   )
