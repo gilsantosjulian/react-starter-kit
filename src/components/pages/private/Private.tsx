@@ -1,5 +1,5 @@
 import React, { ReactElement, useEffect, } from 'react'
-import fetchRickAndMortyData from 'state/private/fetchRickAndMortyData/action'
+import fetchRickAndMortyData from 'state/modules/private/fetchRickAndMortyData/action'
 import Services from 'organisms/Services'
 import { useGlobalState, } from 'state/StoreProvider'
 

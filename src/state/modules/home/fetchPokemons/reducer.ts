@@ -1,9 +1,9 @@
 import produce from 'immer'
 
-import setInitialData from 'state/utils/setInitialData'
-import setError from 'state/utils/setError'
-import setResult from 'state/utils/setResult'
-import setDefaultData from 'state/utils/setDefaultData'
+import setInitialData from 'state/modules/utils/setInitialData'
+import setError from 'state/modules/utils/setError'
+import setResult from 'state/modules/utils/setResult'
+import setDefaultData from 'state/modules/utils/setDefaultData'
 import Action from 'types/action'
 import Draft from 'types/draft'
 import { FetchPokemons, } from 'types/state'

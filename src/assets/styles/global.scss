@@ -1,5 +1,4 @@
 html, body, body>div {
-  height: 100%;
   margin: 0px;
   padding: 0px;
 }
@@ -10,9 +9,9 @@ html, body, body>div {
 
 @font-face {
   font-family: 'Montserrat';
-  src: url('../fonts/Montserrat-Regular.woff2') format('woff2'),
-      url('../fonts/Montserrat-Regular.woff') format('woff'),
-      url('../fonts/Montserrat-Regular.ttf') format('truetype');
+  src: url('../fonts/montserrat-regular.woff2') format('woff2'),
+      url('../fonts/montserrat-regular.woff') format('woff'),
+      url('../fonts/montserrat-regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }

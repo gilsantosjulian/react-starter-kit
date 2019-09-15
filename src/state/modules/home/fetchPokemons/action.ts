@@ -1,6 +1,6 @@
-import actionHelper from 'utils/actionHelper'
-import { HIDE_SPINNER, SHOW_SPINNER, } from 'state/ui/spinner/actionTypes'
-import requester from 'services/requester'
+import actionCreator from 'utils/actionCreator'
+import { HIDE_SPINNER, SHOW_SPINNER, } from 'state/modules/ui/spinner/actionTypes'
+import requester from 'utils/requester'
 import Response from 'types/response'
 import {
   WILL_FETCH_POKEMONS,
@@ -10,12 +10,12 @@ import {
 
 export default async (dispatch: any): Promise<void> => {
   dispatch(
-    actionHelper(
+    actionCreator(
       SHOW_SPINNER
     )
   )
   dispatch(
-    actionHelper(
+    actionCreator(
       WILL_FETCH_POKEMONS
     )
   )
@@ -44,25 +44,25 @@ export default async (dispatch: any): Promise<void> => {
     )
 
     dispatch(
-      actionHelper(
+      actionCreator(
         FETCHING_POKEMONS, data
       )
     )
   } catch (error) {
     dispatch(
-      actionHelper(
+      actionCreator(
         FETCHING_POKEMONS, error, true
       )
     )
   }
 
   dispatch(
-    actionHelper(
+    actionCreator(
       HIDE_SPINNER
     )
   )
   dispatch(
-    actionHelper(
+    actionCreator(
       DID_FETCH_POKEMONS
     )
   )
