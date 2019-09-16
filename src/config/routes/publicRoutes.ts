@@ -1,6 +1,6 @@
 import { route, } from 'navi'
 
-import publicViews from 'config/publicViews.json'
+import publicViews from 'config/routes/publicViews.json'
 import asyncForEach from 'utils/asyncForEach'
 import upperCamelCaseToLowerCamelCase from 'utils/upperCamelCaseToLowerCamelCase'
 import Route from 'types/route'

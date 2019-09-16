@@ -1,9 +1,9 @@
 import State from 'types/state'
 import Action from 'types/action'
-import homeReducer from './home/reducer'
-import privateReducer from './private/reducer'
-import uiReducer from './ui/reducer'
-import middlewares from './middlewares'
+import homeReducer from './modules/home/reducer'
+import privateReducer from './modules/private/reducer'
+import uiReducer from './modules/ui/reducer'
+import middlewares from './middlewaresRegister'
 
 export default (
   { home, ui, priv, }: State, action: Action

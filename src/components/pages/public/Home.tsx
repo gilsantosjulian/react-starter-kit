@@ -2,7 +2,7 @@ import React, { ReactElement, useEffect, } from 'react'
 
 import * as styles from 'publicViewsStyles/home.scss'
 import { useGlobalState, } from 'state/StoreProvider'
-import fetchPokemons from 'state/home/fetchPokemons/action'
+import fetchPokemons from 'state/modules/home/fetchPokemons/action'
 import RowResponsive from 'templates/RowResponsive'
 import CenteredParagraph from 'organisms/CenteredParagraph'
 import VerticalCarousel from 'organisms/VerticalCarousel'
