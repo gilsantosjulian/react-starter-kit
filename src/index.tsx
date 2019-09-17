@@ -12,6 +12,9 @@ import Splash from 'pages/public/Splash'
 import HorizontalSpinner from 'atoms/HorizontalSpinner'
 import { getLanguage, getMessage, } from 'config/internationalization/'
 import 'assets/styles/global.scss'
+import typography from './theme/typography'
+
+typography.injectStyles()
 
 const rootElement = document.getElementById(
   'root'

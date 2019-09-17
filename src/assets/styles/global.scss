@@ -1,3 +1,6 @@
+@import '../../theme/fonts.scss';
+@import './config.scss';
+
 html, body, body>div {
   margin: 0px;
   padding: 0px;
@@ -5,13 +8,4 @@ html, body, body>div {
 
 ::-webkit-scrollbar {
   width: 0px;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/montserrat-regular.woff2') format('woff2'),
-      url('../fonts/montserrat-regular.woff') format('woff'),
-      url('../fonts/montserrat-regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
 }
