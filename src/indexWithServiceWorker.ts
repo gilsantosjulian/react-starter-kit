@@ -8,7 +8,7 @@ if ('serviceWorker' in navigator) {
     (): void => {
       navigator.serviceWorker
         .register(
-          '/webpack-service-worker.js'
+          '/serviceWorker.js'
         )
         .then(
           (
