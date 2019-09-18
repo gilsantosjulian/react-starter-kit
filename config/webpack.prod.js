@@ -12,11 +12,6 @@ module.exports = webpackMerge(commonWebPackConfiguration, {
   plugins: [
     new CopyWebpackPlugin([
       {
-        from: path.resolve(__dirname, '../public/pwa/workbox'), 
-        to: 'workbox',
-        toType: 'dir',
-      },
-      {
         from: path.resolve(__dirname, '../public/pwa/serviceWorker.js'), 
         to: 'serviceWorker.js',
       },
