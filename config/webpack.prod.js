@@ -1,7 +1,6 @@
 const path = require('path');
 const webpackMerge = require('webpack-merge');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-
 const commonWebPackConfiguration = require('./webpack.common');
 
 module.exports = webpackMerge(commonWebPackConfiguration, {

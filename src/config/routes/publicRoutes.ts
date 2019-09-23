@@ -23,7 +23,9 @@ export default async (): Promise<object> => {
           ...specifiConfiguration.default,
           title: publicView.name,
           getView: (): Promise<object> => import(
-            `pages/public/${publicView.name}.${publicView.extension}`
+            /* webpackChunkName: 'public' */ `pages/public/${publicView.name}.${
+              publicView.extension
+            }`
           ),
         }
       )
