@@ -29,7 +29,9 @@ export default async (): Promise<object> => {
                 ...specifiConfiguration.default,
                 title: privateView.name,
                 getView: (): Promise<object> => import(
-                  `pages/private/${privateView.name}.${privateView.extension}`
+                  /* webpackChunkName: 'private' */ `pages/private/${privateView.name}.${
+                    privateView.extension
+                  }`
                 ),
               }
             )
