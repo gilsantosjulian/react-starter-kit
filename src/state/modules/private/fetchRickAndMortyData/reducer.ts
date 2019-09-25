@@ -3,10 +3,10 @@ import Action from 'types/action'
 import Draft from 'types/draft'
 import { FetchRickAndMortyData, } from 'types/state'
 
-import setInitialData from 'state/utils/setInitialData'
-import setError from 'state/utils/setError'
-import setResult from 'state/utils/setResult'
-import setDefaultData from 'state/utils/setDefaultData'
+import setInitialData from 'state/modules/utils/setInitialData'
+import setError from 'state/modules/utils/setError'
+import setResult from 'state/modules/utils/setResult'
+import setDefaultData from 'state/modules/utils/setDefaultData'
 import {
   WILL_FETCH_RICKY_AND_MORTY_DATA,
   FETCHING_RICKY_AND_MORTY_DATA,
@@ -20,13 +20,6 @@ export default (
   (
     draft: Draft
   ): void => {
-    console.log(
-      'TYPE'
-    )
-
-    console.log(
-      action.type
-    )
     switch (action.type) {
       case WILL_FETCH_RICKY_AND_MORTY_DATA:
         setInitialData(

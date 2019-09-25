@@ -2,10 +2,10 @@ import {
   route, redirect, map, Matcher, 
 } from 'navi'
 
-import privateViews from 'config/privateViews.json'
+import privateViews from 'config/routes/privateViews.json'
 import asyncForEach from 'utils/asyncForEach'
 import upperCamelCaseToLowerCamelCase from 'utils/upperCamelCaseToLowerCamelCase'
-import isAuthenticated from 'utils/isAuthenticated'
+import isAuthenticated from 'config/authentication/isAuthenticated'
 import Route from 'types/route'
 
 export default async (): Promise<object> => {
@@ -29,7 +29,9 @@ export default async (): Promise<object> => {
                 ...specifiConfiguration.default,
                 title: privateView.name,
                 getView: (): Promise<object> => import(
-                  `pages/private/${privateView.name}.${privateView.extension}`
+                  /* webpackChunkName: 'private' */ `pages/private/${privateView.name}.${
+                    privateView.extension
+                  }`
                 ),
               }
             )

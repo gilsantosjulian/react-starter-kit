@@ -1,18 +1,11 @@
+@import '../../theme/fonts.scss';
+@import './config.scss';
+
 html, body, body>div {
-  height: 100%;
   margin: 0px;
   padding: 0px;
 }
 
 ::-webkit-scrollbar {
   width: 0px;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat-Regular.woff2') format('woff2'),
-      url('../fonts/Montserrat-Regular.woff') format('woff'),
-      url('../fonts/Montserrat-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
 }

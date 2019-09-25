@@ -6,5 +6,8 @@
   "home.txt1": "Reason about this starter",
   "home.txt2": "We want to reduce headaches of configuring a React project from scratch and we included new technologies.",
   "home.txt3": "Stack of this staster",
-  "home.txt4": "React, Navi, Typescript, Webpack, Prettier, Eslint, Sass, Css modules, React intl, Atomic design, Husky and Commitizen."
+  "home.txt4": "React, Navi, Typescript, Webpack, Prettier, Eslint, Sass, Css modules, React intl, Atomic design, Husky and Commitizen.",
+  "private.txt1": "What we do",
+  "private.txt2": "Having and managing a correct marketing strategy is crucial in a fast moving market.",
+  "private.txt3": "See image"
 }

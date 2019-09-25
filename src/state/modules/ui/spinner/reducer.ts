@@ -1,6 +1,6 @@
 import produce from 'immer'
 
-import setResult from 'state/utils/setResult'
+import setResult from 'state/modules/utils/setResult'
 import Action from 'types/action'
 import Draft from 'types/draft'
 import { Spinner, } from 'types/state'

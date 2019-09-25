@@ -1,7 +1,7 @@
 import { mount, Matcher, } from 'navi'
 
-import getPublicViews from 'config/publicRoutes'
-import getPrivateViews from 'config/privateRoutes'
+import getPublicViews from 'config/routes/publicRoutes'
+import getPrivateViews from 'config/routes/privateRoutes'
 
 const getViews = async (): Promise<object> => {
   const publicViews = await getPublicViews()
