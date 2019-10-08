@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "noImplicitAny": true,
-    "resolveJsonModule": true,
     "jsx": "react",
     "esModuleInterop": true,
     "lib": ["dom", "es2015", "es2016", "es2017"],
@@ -32,6 +31,7 @@
     }
   },
   "include": [
-    "./src/**/**/*"
+    "./src/**/**/*",
+    "declarations.d.ts"
   ]
 }

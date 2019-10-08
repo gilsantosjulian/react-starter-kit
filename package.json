@@ -31,7 +31,8 @@
     "lint": "eslint --debug 'src/**/*.{ts,tsx}'",
     "lint:write": "eslint --debug 'src/**/*.{ts,tsx}' --fix",
     "watcher": "node scripts/watcher/",
-    "init": "npm-run-all --parallel start watcher"
+    "init": "npm-run-all --parallel start watcher",
+    "bundle-report": "webpack-bundle-analyzer --host 127.0.0.0 --port 4200 dist/stats.json"
   },
   "husky": {
     "hooks": {
@@ -78,6 +79,7 @@
     "typescript": "^3.4.3",
     "typings-for-css-modules-loader": "^1.7.0",
     "webpack": "^4.30.0",
+    "webpack-bundle-analyzer": "^3.5.2",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.3.1",
     "webpack-merge": "^4.2.1"
