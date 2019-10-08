@@ -31,8 +31,7 @@
     "lint": "eslint --debug 'src/**/*.{ts,tsx}'",
     "lint:write": "eslint --debug 'src/**/*.{ts,tsx}' --fix",
     "watcher": "node scripts/watcher/",
-    "init": "npm-run-all --parallel start watcher",
-    "bundle-report": "webpack-bundle-analyzer --host 127.0.0.0 --port 4200 dist/stats.json"
+    "init": "npm-run-all --parallel start watcher"
   },
   "husky": {
     "hooks": {
