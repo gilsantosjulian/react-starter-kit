@@ -18,9 +18,9 @@ module.exports = webpackMerge(commonWebPackConfiguration, {
   },
   plugins: [
     new BundleAnalyzerPlugin({
-        analyzerMode: 'static',
-        reportFilename: "../dev-bundle-analyzer.html",
-        openAnalyzer: false,
-      })
+      analyzerMode: 'static',
+      openAnalyzer: false,
+      generateStatsFile: true
+    })
   ]
 });
