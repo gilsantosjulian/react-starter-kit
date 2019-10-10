@@ -6,7 +6,27 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: path.join(__dirname, '../dist'),
+    chunkFilename: 'chunks/[name].js',
     publicPath: '/',
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        nodeModules: {
+          test: /[\\/]node_modules[\\/]/,
+          name(module) {
+            const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+            return `npm.${packageName.replace('@', '')}`;
+          },
+        },
+        sharedModules: {
+          name: 'sharedModules',
+          minChunks: 2,
+          enforce: true,
+        }
+      },
+    },
   },
   resolve: {
     extensions: [
@@ -50,6 +70,9 @@ module.exports = {
         use: [
           {
             loader: 'awesome-typescript-loader',
+            options: {
+              silent: true,
+            }
           },
         ],
         exclude: /node_modules/,
@@ -107,7 +130,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(eot|ttf|woff|woff2)$/,
+        test: /\.(woff|woff2)$/,
         use: [
           {
             loader: 'file-loader',

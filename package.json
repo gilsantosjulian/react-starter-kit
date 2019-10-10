@@ -31,7 +31,8 @@
     "lint": "eslint --debug 'src/**/*.{ts,tsx}'",
     "lint:write": "eslint --debug 'src/**/*.{ts,tsx}' --fix",
     "watcher": "node scripts/watcher/",
-    "init": "npm-run-all --parallel start watcher"
+    "init": "npm-run-all --parallel start watcher",
+    "bundle-report": "webpack --profile --json --config ./config/webpack.prod.js > stats.json && webpack-bundle-analyzer stats.json -m static"
   },
   "husky": {
     "hooks": {
@@ -50,11 +51,13 @@
     "@types/react": "^16.8.13",
     "@types/react-dom": "^16.8.4",
     "@types/react-intl": "^2.3.18",
+    "@types/typography": "^0.16.3",
     "@typescript-eslint/eslint-plugin": "^1.9.0",
     "@typescript-eslint/parser": "^1.9.0",
     "awesome-typescript-loader": "^5.2.1",
     "clean-webpack-plugin": "^2.0.1",
-    "commitizen": "^3.0.7",
+    "commitizen": "^4.0.3",
+    "copy-webpack-plugin": "^5.0.4",
     "css-loader": "^1.0.1",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^5.16.0",
@@ -76,10 +79,10 @@
     "typescript": "^3.4.3",
     "typings-for-css-modules-loader": "^1.7.0",
     "webpack": "^4.30.0",
+    "webpack-bundle-analyzer": "^3.5.2",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.3.1",
-    "webpack-merge": "^4.2.1",
-    "workbox-webpack-plugin": "^4.3.0"
+    "webpack-merge": "^4.2.1"
   },
   "dependencies": {
     "axios": "^0.19.0",
@@ -88,7 +91,8 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-intl": "^2.9.0",
-    "react-navi": "^0.12.6"
+    "react-navi": "^0.12.6",
+    "typography": "^0.16.19"
   },
   "config": {
     "commitizen": {

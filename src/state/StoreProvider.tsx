@@ -6,6 +6,8 @@ import React, {
   Reducer,
 } from 'react'
 
+import middlewaresRegister from './middlewaresRegister'
+
 const StoreContext = createContext(
   []
 )
@@ -19,6 +21,10 @@ export const StoreProvider: React.SFC<StoreProviderProps> = (
 ): ReactElement => {
   const [ state, dispatch, ] = useReducer(
     reducer, initialState
+  )
+
+  middlewaresRegister(
+    null, null, state
   )
 
   return (

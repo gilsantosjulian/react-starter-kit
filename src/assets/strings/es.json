@@ -6,5 +6,8 @@
   "home.txt1": "Razon de este kit de inicio",
   "home.txt2": "Nosotros queremos reducir los dolores de cabeza de configurar un projecto React desde cero y nosotros incluimos nuevas tecnologias.",
   "home.txt3": "Stack del kit de inicio",
-  "home.txt4": "React, Navi, Typescript, Webpack, Prettier, Eslint, Sass, Css modules, React intl, Atomic design, Husky y Commitizen."
+  "home.txt4": "React, Navi, Typescript, Webpack, Prettier, Eslint, Sass, Css modules, React intl, Atomic design, Husky y Commitizen.",
+  "private.txt1": "Qué hacemos",
+  "private.txt2": "Tener una estrategia de marketing correcta es crucial en un mercado en rápido movimiento.",
+  "private.txt3": "Ver imágen"
 }
