@@ -1,5 +1,7 @@
 node_modules
 reports
 dist
+stats.json
+report.html
 .DS_Store
 /src/assets/**/*.d.ts

@@ -70,6 +70,9 @@ module.exports = {
         use: [
           {
             loader: 'awesome-typescript-loader',
+            options: {
+              silent: true,
+            }
           },
         ],
         exclude: /node_modules/,

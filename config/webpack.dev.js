@@ -1,8 +1,6 @@
 const path = require('path');
 const webpackMerge = require('webpack-merge');
 const commonWebPackConfiguration = require('./webpack.common');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-
 
 module.exports = webpackMerge(commonWebPackConfiguration, {
   entry: [
@@ -16,11 +14,4 @@ module.exports = webpackMerge(commonWebPackConfiguration, {
     historyApiFallback: true,
     open: true,
   },
-  plugins: [
-    new BundleAnalyzerPlugin({
-      analyzerMode: 'static',
-      openAnalyzer: false,
-      generateStatsFile: true
-    })
-  ]
 });
